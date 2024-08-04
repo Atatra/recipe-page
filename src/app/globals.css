@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: hsl(30, 54%, 90%);
+}
+
+article {
+  background-color: hsl(0, 0%, 100%);
+}
+
+li {
+  padding-top: 6px;
+}
+
+.prep-list {
+  list-style-type: none; /* Remove default bullet points */
+  list-style-position: inside;
+  padding-left: 0; /* Remove default padding */
+}
+
+.prep-list li {
+  position: relative; /* Allows positioning of custom bullet */
+  padding-left: 30px; /* Space for custom bullet */
+}
+
+.prep-list li::before {
+  content: "•"; /* Custom bullet point */
+  color: hsl(332, 51%, 32%); /* Custom bullet color */
+  font-size: 20px; /* Bullet size */
+
+  position: absolute; /* Position bullet */
+  left: 0; /* Align bullet horizontally to the left of the text */
+  padding-left: 5px;
+  top: 50%; /* Vertically center bullet */
+  transform: translateY(-39%); /* Adjust bullet to be perfectly centered */
+}
+
+.ingr-list li::before {
+  color: hsl(14, 45%, 36%);
+}
+
+.instr-list {
+  list-style-type: decimal;
+  list-style-position: outside;
+  padding-left: 21px;
+}
+
+.instr-list li {
+  position: relative; /* Allows positioning of custom bullet */
+  padding-left: 1em;
+}
+
+.instr-list li::marker {
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  color: hsl(14, 45%, 36%);
+}
+
+table {
+  margin-top: 15px;
+  width: 100%;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid;
+  border-color: hsla(30, 9%, 83%, 0.79);
+}
+
+tr > td {
+  padding: 10px;
+}
+
+th {
+  position: relative;
+  left: 0;
+  font-weight: 300;
+}
+
+.td-data {
+  color: hsl(14, 45%, 36%);
+  font-weight: 600;
+  padding-right: 30px;
+  overflow: hidden; /* Hide any overflowed content */
+}
+
+.th-data {
+  padding-left: 30px;
+}
+
+table {
+  width: 100%; /* Assure que le tableau utilise toute la largeur du conteneur */
+  border-collapse: collapse; /* Fusionne les bordures pour éviter les doublons */
+}
+
+td,
+th {
+  overflow: hidden; /* Cache le contenu qui déborde */
+  text-overflow: ellipsis; /* Affiche des points de suspension si le texte dépasse */
+  white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
